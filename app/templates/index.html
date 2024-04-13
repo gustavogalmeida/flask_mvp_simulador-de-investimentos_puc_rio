@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="page-header">
+        <div class="page-header text-center"><h1>Simulador de investimentos em renda fixa</h1></div>
+    </div>
+    <div class="container">
+        <form action="/calcular" method="post">
+            <div>
+                <fieldset>
+                    <h2>Parametros da Aplicação</h2>
+                    <div>
+                        <label for="valor">Valor aplicado</label><br>
+                        <input type="text" id="valor" name="valor" placeholder="1000,00" required/>
+                    </div>
+                    <div>
+                        <label for="prazo">Dias aplicados</label><br>
+                        <input type="text" placeholder="365" name="dias" required>
+                    </div>
+                    <div>
+                        <label for="cdi-aplicacao">CDI Aplicação</label><br>
+                        <input type="text" name="cdi" placeholder="%" required>
+                    </div>
+                    <div>
+                        <label for="selic-meta">SELIC Meta</label><br>
+                        <input type="text" value="10,75% a.a" disabled required>
+                    </div>
+                    <div>
+                        <label for="cdi-meta">CDI Meta</label><br>
+                        <input type="text" value="10,65% a.a" disabled required>
+                    </div>
+                    <div>
+                        <label for="sobras">Porcentagem sobras sobre saldo médio</label><br>
+                        <input type="text" value="0,87%" disabled>
+                    </div>
+                    <button type="submit">Calcular</button>
+                </fieldset>
+            </div>
+            <div>
+                <form action="/salvar_simulacao">
+                    <fieldset>
+                        <h2>Resultado da simulação</h2>
+                        <div>
+                            <label for="rentabilidade-aplicacao">Valor Rentabilidade</label><br>
+                            <input type="text"  placeholder="R$ 0,00" value="{{ rentabilidade_paga }}">
+                        </div>
+                        <div>
+                            <label for="sobras-previstas">Valor das sobras previstas</label><br>
+                            <input type="text" placeholder="R$ 0,00" value="{{ valor_sobras }}" disabled>
+                        </div>
+                        <div>
+                            <br><label for="rentabilidade-bruta">Valor Rentabilidade bruta</label><br>
+                            <input type="text" placeholder="R$ 0,00" disabled>
+                        </div>
+                        <div>
+                            <label for="cdi-considerando-sobras">CDI bruto considerando sobras</label><br>
+                            <input type="text" placeholder="%" value="{{ cdi_considerando_sobras }}" disabled><br>
+                        </div>
+                        <div>
+                            <p>* Os investimentos em renda fixa pós-fixada atrelada à taxa SELIC estão sujeitos a 
+                            oscilações na taxa básica de juros, o que pode resultar em divergências no valor final.</p>
+                            <p>* sobras consideram resultado ult exerc, e saldo médio</p>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <button type="submit">Salvar simulação</button>
+        </form>
+    </div>
+</body>
+</html>
