@@ -11,7 +11,7 @@ def calcula_cdi_considerando_sobras(cdi_pago):
     return cdi_considerando_sobras
 
 def calcula_valor_sobras(valor):
-    ## TO DO: Colocar uma forma de ter saldo médio
+    ## TODO: Colocar uma forma de ter saldo médio
     valor_sobras = float(valor) * sobras_sobre_saldo_medio_deposito_ultimo_exercicio/100
     return valor_sobras
 
@@ -20,3 +20,12 @@ def calcula_rentabilidade_periodo_valor(dias, valor_aplicado, cdi_pago):
     rentabilidade_periodo_porcentagem = ((1 + (rentabilidade_aa/100))**(float(dias)/365)-1)
     rentabilidade_periodo_valor = rentabilidade_periodo_porcentagem * float(valor_aplicado)
     return rentabilidade_periodo_valor
+
+def calcula_rentabilidade_bruta_valor(valor_sobras, rentabilidade_valor):
+    return float(valor_sobras)+float(rentabilidade_valor)
+
+def calcula_rentabilidade_bruta_porcentagem_aa(rentabilidade_bruta_valor, valor_aplicado):
+    return float(rentabilidade_bruta_valor)/float(valor_aplicado)*100
+
+def calcula_valor_resgate(rentabilidade_bruta_valor, valor_aplicado):
+    return float(rentabilidade_bruta_valor)+float(valor_aplicado)
