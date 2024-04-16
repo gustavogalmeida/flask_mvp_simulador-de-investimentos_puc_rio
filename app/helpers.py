@@ -27,5 +27,5 @@ def calcula_rentabilidade_bruta_valor(valor_sobras, rentabilidade_valor):
 def calcula_rentabilidade_bruta_porcentagem_aa(rentabilidade_bruta_valor, valor_aplicado):
     return float(rentabilidade_bruta_valor)/float(valor_aplicado)*100
 
-def calcula_valor_resgate(rentabilidade_bruta_valor, valor_aplicado):
+def calcula_saldo_total(rentabilidade_bruta_valor, valor_aplicado):
     return float(rentabilidade_bruta_valor)+float(valor_aplicado)
