@@ -18,3 +18,40 @@ cursor = conn.cursor()
 
 cursor.execute("DROP DATABASE IF EXISTS `db_plataforma_investimentos`;")
 
+cursor.execute("CREATE DATABASE `db_plataforma_investimentos`;")
+
+cursor.execute("use `db_plataforma_investimentos`")
+
+# criando dicionario que armazena as tabelas
+TABLES = {}
+TABLES['simulacoes'] = ('''
+        CREATE TABLE `simulacoes`(
+            `id` int NOT NULL AUTO_INCREMENT,
+            `descricao` varchar(30) not null,
+            `valor_aplicado` float not null,
+            `cdi` float not null,
+            `cdi_sobras` float not null,
+            `dias` int not null,
+            `rentabilidade_bruta` float not null,
+            `saldo_total` float not null,
+            PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
+
+for tabela_nome in TABLES:
+      tabela_sql = TABLES[tabela_nome]
+      try:
+            print('Criando tablea {}:'.format(tabela_nome), end=' ')
+            cursor.execute(tabela_sql)
+      except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
+                  print('Já existe')
+            else:
+                  print(err.msg)
+      else:
+            print('OK')
+
+
+conn.commit()
+
+cursor.close()
+conn.close()
