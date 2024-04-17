@@ -106,7 +106,8 @@
                     <th>Dias</th>
                     <th>Rentabilidade bruta</th>
                     <th>Saldo total</th>
-                    <th>x</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -119,7 +120,10 @@
                     <td>{{ simulacao.dias }}</td>
                     <td>{{ simulacao.rentabilidade_bruta }}</td>
                     <td>{{ simulacao.saldo_total }}</td>
-                    <td>x</td>
+                    <td><em>TO DO: editar</em></td>
+                    <td>
+                        <a href="{{ url_for('excluir_simulacao', id=simulacao.id) }}">Excluir</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
