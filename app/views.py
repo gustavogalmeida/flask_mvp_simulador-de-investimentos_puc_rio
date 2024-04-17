@@ -1,10 +1,11 @@
-from app import app, helpers, models
+from app import app, helpers, models, db
 from flask import render_template, request, redirect, url_for
-
-simulacoes_lista = []
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    
+    simulacoes_lista = models.Simulacao.query.order_by(models.Simulacao.id)
+
     if request.method=='POST':
         valor_aplicado = request.form['valor']
         dias = request.form['dias']
@@ -39,12 +40,20 @@ def salvar_simulacao():
     rentabilidade_bruta = request.form['rentabilidade_bruta_valor']
     saldo_total = request.form['saldo_total']
 
-    simulacao = models.Simulacao(descricao=descricao, valor_aplicado=valor_aplicado, cdi=cdi, cdi_sobras=cdi_sobras, dias=dias, rentabilidade_bruta=rentabilidade_bruta, saldo_total=saldo_total)
+    nova_simulacao = models.Simulacao(descricao=descricao, valor_aplicado=valor_aplicado, cdi=cdi, cdi_sobras=cdi_sobras, dias=dias, rentabilidade_bruta=rentabilidade_bruta, saldo_total=saldo_total)
 
-    simulacoes_lista.append(simulacao)
+    db.session.add(nova_simulacao)
+    db.session.commit()
 
     return redirect(url_for('index'))
 
-@app.route('/deletar_simulacao')
-def deletar_simulacao():
-    return None
+@app.route('/excluir_simulacao/<int:id>')
+def excluir_simulacao(id):
+    models.Simulacao.query.filter_by(id=id).delete()
+    db.session.commit()
+    return redirect(url_for('index'))
+
+@app.route('/editar_simulacao')
+def editar():
+    ## TODO: implementar rota de edição (será necessário outra pag)
+    pass
