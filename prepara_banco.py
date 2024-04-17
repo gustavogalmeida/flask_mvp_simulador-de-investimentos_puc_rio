@@ -24,9 +24,9 @@ cursor.execute("use `db_plataforma_investimentos`")
 
 # criando dicionario que armazena as tabelas
 TABLES = {}
-TABLES['simulacoes'] = ('''
-        CREATE TABLE `simulacoes`(
-            `id` int NOT NULL AUTO_INCREMENT,
+TABLES['simulacao'] = ('''
+        CREATE TABLE `simulacao`(
+            `id` int(11) NOT NULL AUTO_INCREMENT,
             `descricao` varchar(30) not null,
             `valor_aplicado` float not null,
             `cdi` float not null,
