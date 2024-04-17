@@ -9,4 +9,3 @@ class Simulacao(db.Model):
     dias = db.Column(db.Integer, nullable=False)
     rentabilidade_bruta = db.Column(db.Integer, nullable=False)
     saldo_total = db.Column(db.Float, nullable=False)
-
