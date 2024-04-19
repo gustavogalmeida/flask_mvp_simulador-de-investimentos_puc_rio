@@ -56,10 +56,10 @@ python app.py
 │   │   views.py  
 │   │  
 │   ├───templates  
-│   │       index.html  
+│   │   │   index.html  
 │   │  
 │   └───static  
-│           style.css  
+│   │   │   style.css  
 
 ## Contribuição
 Contribuições são bem-vindas! Para sugestões de melhorias, abra uma issue neste repositório.
