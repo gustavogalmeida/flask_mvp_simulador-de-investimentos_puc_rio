@@ -1,11 +1,9 @@
-# mvp_pucrio_backend_simulador-renda-fixa_flask
- 
-## Objetivo
-Projeto MVP para o fim da primeira Sprint/Modulo do curso de pós-graduação em Engenharia de Software da PUC Rio
-
 # Simulador de investimentos em renda fixa - Cooperativa de crédito
 
 O projeto "Simulador de investimentos em renda fixa" é uma aplicação desenvolvida para cooperativas de crédito, permitindo que os usuários simulem investimentos em renda fixa, como LCAs, LCIs, RDCs e muitos outros. Através da inserção de parâmetros como valor aplicado, prazo e taxa de juros, os usuários podem calcular a rentabilidade esperada de seus investimentos. Além disso, a aplicação oferece a funcionalidade de salvar simulações realizadas para referência futura. O projeto utiliza Flask como framework web em Python, integrado com SQLAlchemy para manipulação de banco de dados MySQL.
+
+## Objetivo
+Projeto MVP para o fim da primeira Sprint/Modulo do curso de pós-graduação em Engenharia de Software da PUC Rio
 
 ## Pré-requisitos
 
