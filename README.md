@@ -44,22 +44,22 @@ python app.py
 ## Estrutura do projeto
 
 /flask_mvp_simulador-de-investimentos_puc_rio
-│   
-│   prepara_banco.py
-│   readme.md
-│   requirements.txt
-│   run.py
-└───app
-    │   init.py
-    │   helpers.py
-    │   models.py
-    │   views.py
-    │
-    ├───templates
-    │       index.html
-    │
-    └───static
-            style.css   
+│  
+│   prepara_banco.py  
+│   readme.md  
+│   requirements.txt  
+│   run.py  
+└───app  
+    │   init.py  
+    │   helpers.py  
+    │   models.py  
+    │   views.py  
+    │  
+    ├───templates  
+    │       index.html  
+    │  
+    └───static  
+            style.css  
 
 ## Contribuição
 Contribuições são bem-vindas! Para sugestões de melhorias, abra uma issue neste repositório.
