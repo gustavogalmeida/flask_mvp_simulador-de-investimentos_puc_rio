@@ -37,7 +37,7 @@ python prepara_banco.py
 
 1. Inicie o servidor Flask:
 ```
-python app.py
+python run.py
 ```
 2. Abra o navegador e acesse http://127.0.0.1:5000 ou clique [aqui](http://127.0.0.1:5000), para ver a aplicação em execução.
 
