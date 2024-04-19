@@ -1,9 +1,8 @@
-from app import app, helpers, models, db
+from app import app, db, helpers, models
 from flask import render_template, request, redirect, url_for
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    
     simulacoes_lista = models.Simulacao.query.order_by(models.Simulacao.id)
 
     if request.method=='POST':
