@@ -1,0 +1,128 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.containercolumn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-column-simple {
+    flex: 1;
+}
+.form-column-simple-button {
+    flex: 1;
+    margin-top: 35px;
+}
+
+.form-column:last-child {
+    margin-right: 0; /* Remover a margem da última coluna para evitar espaçamento extra */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin: 6px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    width: 95%;
+    height: 45px;
+    padding: 10px;
+    background-color: #00b398;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #006354;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Tabela de simulações */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #00b398;
+    color: #000000;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[readonly] {
+    background-color: #f2f2f2; /* Cor de fundo cinza */
+    color: #333; /* Cor do texto */
+}
+input[disabled] {
+    background-color: #f2f2f2; /* Cor de fundo cinza */
+    color: #333; /* Cor do texto */
+}
+
