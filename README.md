@@ -49,17 +49,17 @@ python app.py
 │   readme.md  
 │   requirements.txt  
 │   run.py  
-└───app  
-    │   init.py  
-    │   helpers.py  
-    │   models.py  
-    │   views.py  
-    │  
-    ├───templates  
-    │       index.html  
-    │  
-    └───static  
-            style.css  
+├───app  
+│   │   init.py  
+│   │   helpers.py  
+│   │   models.py  
+│   │   views.py  
+│   │  
+│   ├───templates  
+│   │       index.html  
+│   │  
+│   └───static  
+│           style.css  
 
 ## Contribuição
 Contribuições são bem-vindas! Para sugestões de melhorias, abra uma issue neste repositório.
